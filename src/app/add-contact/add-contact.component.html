@@ -1,0 +1,63 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <p class="h3 fw-bold text-primary"><i class="fa fa-plus-circle">&nbsp;</i>Add Contact</p>
+            <p class="fst-italic mt-1">Achieve the maximum speed possible on the Web Platform today, and take it further, via Web Workers and server-side rendering.
+
+                Angular puts you in control over scalability. Meet huge data requirements by building data models on RxJS, Immutable.js or another push-model.Build features quickly with simple, declarative templates. Extend the template language with your own components and use a wide array of existing components. Get immediate Angular-specific help and feedback with nearly every IDE and editor. All this comes together so you can focus on building amazing apps rather than trying to make the code work.</p>
+        </div>
+    </div>
+</div>
+<!--loading -->
+<div *ngIf="loading">
+    <app-spinner></app-spinner>
+</div>
+<div *ngIf="!loading">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+<p class="h4 text-danger fw-bold"> {{errorMessage}} </p>
+            </div>
+        </div>
+    </div>
+</div>
+<pre>{{contact | json}}</pre>
+<!--Contact Form-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <form (submit)="addSubmit()">
+            <div class="mb-2">
+                <input  [(ngModel)]="contact.name" name="name" type="text" class="form-control" placeholder="Name">
+            </div>
+            <div class="mb-2">
+                <input [(ngModel)]="contact.photo" name="photo" type="text" class="form-control" placeholder="Photo url">
+            </div>
+            <div class="mb-2">
+                <input [(ngModel)]="contact.email" name="email" type="text" class="form-control" placeholder="Email Id">
+            </div>
+            <div class="mb-2">
+                <input [(ngModel)]="contact.mobile" name="mobile" type="number" class="form-control" placeholder="Mobile No">
+            </div>
+            <div class="mb-2">
+                <input [(ngModel)]="contact.company" name="company" type="text" class="form-control" placeholder="Company">
+            </div>
+            <div class="mb-2">
+                <input [(ngModel)]="contact.title" name="title" type="text" class="form-control" placeholder="Title">
+            </div>
+
+            <div class="mb-2">
+                <input type="Submit" class="btn btn-success" value="Create">
+                <a routerLink="/" class="btn btn-warning ms-2">Close</a>
+            </div>
+
+
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <img src="https://cdn-icons-png.flaticon.com/512/219/219983.png" alt="user" class="contact-img" >
+        </div>
+
+    </div>
+</div>
